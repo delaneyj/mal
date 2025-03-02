@@ -33,7 +33,7 @@ wasm_MODE = wasmtime
 #
 
 IMPLS = ada ada.2 awk bash basic bbc-basic c c.2 chuck clojure coffee common-lisp cpp crystal cs d dart \
-	elisp elixir elm erlang es6 factor fantom fennel forth fsharp go groovy gnu-smalltalk \
+	dg elisp elixir elm erlang es6 factor fantom fennel forth fsharp go groovy gnu-smalltalk \
 	guile haskell haxe hy io janet java java-truffle js jq julia kotlin latex3 livescript logo lua make mal \
 	matlab miniMAL nasm nim objc objpascal ocaml perl perl6 php picolisp pike plpgsql \
 	plsql powershell prolog ps purs python2 python3 r racket rexx rpython ruby ruby.2 rust scala scheme skew sml \
@@ -104,6 +104,8 @@ scheme_STEP_TO_PROG_chicken     = impls/scheme/$($(1))
 scheme_STEP_TO_PROG_sagittarius = impls/scheme/$($(1)).scm
 scheme_STEP_TO_PROG_cyclone     = impls/scheme/$($(1))
 scheme_STEP_TO_PROG_foment      = impls/scheme/$($(1)).scm
+
+dg_STEPS_TO_PROG = impls/dg/$($(1))
 
 # Map of step (e.g. "step8") to executable file for that step
 ada_STEP_TO_PROG =           impls/ada/$($(1))
