@@ -12,5 +12,6 @@ tasks:
     sources:
       - "**/*.go"
     cmds:
-      - cd ../.. && make "test^dg^step0"
+      - go mod tidy
+      - cd ../.. && make "test^dg^step1"
     silent: true
