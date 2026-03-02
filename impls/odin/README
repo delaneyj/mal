@@ -1,0 +1,14 @@
+Odin mal implementation (work in progress).
+
+Build step0:
+  make
+
+Run REPL for step0:
+  STEP=step0_repl ./run
+
+Run tests for step0 from repo root:
+  make "test^odin^step0"
+
+Run step0 tests in Docker from repo root:
+  make "docker-build^odin"
+  make DOCKERIZE=1 "test^odin^step0"
