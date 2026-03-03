@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Odin: Debug step0_repl (build + CodeLLDB)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/impls/odin/step0_repl",
+      "args": [],
+      "cwd": "${workspaceFolder}/impls/odin",
+      "preLaunchTask": "odin: build step0_repl (debug)",
+      "sourceLanguages": [
+        "odin"
+      ],
+      "console":"integratedTerminal"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "odin: build step0_repl (debug)",
+      "type": "shell",
+      "command": "odin",
+      "args": [
+        "build",
+        "step0_repl.odin",
+        "-file",
+        "-debug",
+        "-o:none",
+        "-out:step0_repl"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/impls/odin"
+      },
+      "group": "build",
+      "problemMatcher": [
+        "$odin"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ]
+}

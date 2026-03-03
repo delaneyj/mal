@@ -29,7 +29,7 @@ main :: proc() {
 	context.allocator = repl_allocator
 
 	for {
-		mem.dynamic_arena_reset(&repl_arena)
+		defer mem.dynamic_arena_reset(&repl_arena)
 
 		line, ok := editline.readline("user> ", repl_allocator)
 		if !ok {
