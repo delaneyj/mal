@@ -1,0 +1,22 @@
+// odin-c-bindgen config for the editline surface used by mal step0.
+// Modeled after examples/raylib in:
+// https://github.com/karl-zylinski/odin-c-bindgen
+
+inputs = [
+	"input"
+]
+
+output_folder = "."
+imports_file = ""
+package_name = "editline"
+
+remove = [
+	"readline",
+	"add_history",
+	"read_history",
+	"write_history",
+	"_readline",
+	"_add_history",
+	"_read_history",
+	"_write_history",
+]

@@ -1,5 +1,27 @@
 Odin mal implementation (work in progress).
 
+Requires libedit (for readline-compatible input/history).
+
+Ubuntu install:
+  sudo apt-get update
+  sudo apt-get install -y libedit-dev
+
+Bindings are laid out in a vendor-style package:
+- vendor/editline/bindgen.sjson
+- vendor/editline/editline__foreign.odin
+- vendor/editline/input/editline_bindings.h
+- vendor/editline/editline_bindings.odin (generated)
+- vendor/editline/editline.odin (wrapper API)
+
+Install/build odin-c-bindgen (user-local, no sudo):
+  git clone https://github.com/karl-zylinski/odin-c-bindgen /tmp/odin-c-bindgen
+  odin build /tmp/odin-c-bindgen/src -out:/tmp/odin-c-bindgen/bindgen.bin
+  install -d ~/.local/bin
+  install -m 0755 /tmp/odin-c-bindgen/bindgen.bin ~/.local/bin/bindgen
+
+If your Odin version cannot build odin-c-bindgen, use a prebuilt binary path instead:
+  make -C impls/odin BINDGEN=/path/to/bindgen.bin bindings
+
 Build step0:
   make
 
@@ -12,3 +34,7 @@ Run tests for step0 from repo root:
 Run step0 tests in Docker from repo root:
   make "docker-build^odin"
   make DOCKERIZE=1 "test^odin^step0"
+
+Regenerate bindings (with odin-c-bindgen):
+  make -C impls/odin bindings
+  make -C impls/odin BINDGEN=/path/to/bindgen.bin bindings

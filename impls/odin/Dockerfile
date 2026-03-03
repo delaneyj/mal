@@ -19,7 +19,7 @@ WORKDIR /mal
 ##########################################################
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    build-essential ca-certificates clang curl git libreadline-dev lld llvm
+    build-essential ca-certificates clang curl git libedit-dev lld llvm
 
 RUN git clone --depth=1 https://github.com/odin-lang/Odin /opt/Odin
 RUN make -C /opt/Odin release-native
